@@ -12,3 +12,9 @@ class Solution {
         return sb.toString();
     }
 }
+
+/*class Solution { // 다른 풀이
+    public String solution(String[] arr) {
+        return String.join("", arr);
+    }
+}*/
