@@ -7,25 +7,20 @@ public class Main {
         int N = scanner.nextInt();
         int[] number = new int[N];
 
-        for (int i = 0; i < number.length; i++) {
-            number[i] = scanner.nextInt();
-        }
+        // 배열 입력과 동시에 최댓값과 최솟값 찾기
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
 
-        int max = number[0];
-        for (int i = 1; i < number.length; i++) {
+        for (int i = 0; i < N; i++) {
+            number[i] = scanner.nextInt();
             if (number[i] > max) {
                 max = number[i];
             }
-        }
-
-        int min = number[0];
-        for (int i = 1; i < number.length; i++) {
             if (number[i] < min) {
                 min = number[i];
             }
         }
 
         System.out.println(min + " " + max);
-
     }
 }
