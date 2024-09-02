@@ -4,18 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int max = 0; // 최댓값을 저장할 변수
-        int index = 0; // 최댓값이 몇 번째 수인지 저장할 변수
+        int[] number = new int[9];
+        int maxNumber;
+        int line = 1;
 
-        for (int i = 1; i <= 9; i++) {
-            int number = scanner.nextInt();
-            if (number > max) {
-                max = number;
-                index = i;
+        for (int i = 0; i < number.length; i++) {
+            number[i] = scanner.nextInt();
+        }
+
+        maxNumber = number[0];
+        for (int i = 1; i < number.length; i++) {
+            if (number[i] > maxNumber) {
+                maxNumber = number[i];
+                line = i + 1;
             }
         }
 
-        System.out.println(max);   // 최댓값 출력
-        System.out.println(index); // 최댓값이 몇 번째 수인지 출력
+        System.out.println(maxNumber);
+        System.out.println(line);
     }
 }
