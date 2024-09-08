@@ -1,34 +1,29 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class Main {
+public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // 입력받은 단어를 모두 대문자로 변환
+        
         String word = scanner.nextLine().toUpperCase();
-
-        // 알파벳 빈도를 저장할 배열 (A-Z는 26개의 알파벳)
-        int[] frequency = new int[26];
-
-        // 각 문자에 대해 빈도를 계산
+        
+        int[] freq = new int[26];
+        
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
-            frequency[ch - 'A']++;
+            freq[ch - 'A']++;
         }
-
-        // 가장 많이 사용된 알파벳 찾기
-        int maxFrequency = -1;
-        char mostFrequentChar = '?';
-        for (int i = 0; i < 26; i++) {
-            if (frequency[i] > maxFrequency) {
-                maxFrequency = frequency[i];
-                mostFrequentChar = (char) (i + 'A');
-            } else if (frequency[i] == maxFrequency) {
-                mostFrequentChar = '?';
+        
+        int maxFreq = -1;
+        char mostFreq = '?';
+        for (int i = 0; i < freq.length; i++) {
+            if (freq[i] > maxFreq) {
+                maxFreq = freq[i];
+                mostFreq = (char) (i + 'A');
+            } else if (freq[i] == maxFreq) {
+                mostFreq = '?';
             }
         }
-
-        // 결과 출력
-        System.out.println(mostFrequentChar);
+        
+        System.out.println(mostFreq);
     }
 }
