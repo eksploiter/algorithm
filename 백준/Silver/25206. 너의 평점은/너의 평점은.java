@@ -54,6 +54,6 @@ public class Main {
 
         // 전공평점 계산 및 출력
         double majorGPA = totalScore / totalCredits;
-        System.out.printf("%.6f\n", majorGPA);
+        System.out.println(majorGPA);
     }
 }
