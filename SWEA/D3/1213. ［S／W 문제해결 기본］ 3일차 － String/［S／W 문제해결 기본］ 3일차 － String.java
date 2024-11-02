@@ -8,12 +8,10 @@ public class Solution {
         int T = 10;
         
     	for (int i = 1; i <= T; i++) {
-            int caseNum = scanner.nextInt();
             scanner.nextLine(); // 개행문자 처리
             String pattern = scanner.nextLine().trim();
         	String text = scanner.nextLine().trim();
-            int result = bruteForce(pattern, text);
-        	System.out.println("#" + caseNum + " " + result);
+        	System.out.println("#" + i + " " + bruteForce(pattern, text));
         }
         
         scanner.close();
