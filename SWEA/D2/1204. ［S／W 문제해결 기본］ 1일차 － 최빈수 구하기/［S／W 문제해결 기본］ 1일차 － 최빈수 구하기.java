@@ -10,14 +10,14 @@ public class Solution {
             for (int j = 0; j < 1000; j++) {
             	scores[j] = scanner.nextInt();
             }
-            System.out.println("#" + i + " " + findMode(scores));
+            System.out.println("#" + i + " " + find(scores));
         }
         scanner.close();
     }
-    public static int findMode(int[] scores) {
-    	int[] count = new int[101]; // 0-100
-        for (int score : scores) {
-        	count[score]++;
+    public static int find(int[] scores) {
+    	int[] count = new int[101];
+        for (int i = 0; i < scores.length; i++) {
+        	count[scores[i]]++;
         }
         int maxCount = 0;
         int mode = 0;
