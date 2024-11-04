@@ -1,5 +1,5 @@
-import java.util.*;
-
+import java.util.Scanner;
+// 메서드를 사용해서 만들어보기
 public class Solution {
 	public static void main(String[] args) {
     	Scanner scanner = new Scanner(System.in);
@@ -10,15 +10,18 @@ public class Solution {
             for (int i = 0; i < N; i++) {
             	buildings[i] = scanner.nextInt();
             }
-            int bestView = 0;
-            for (int i = 2; i < N - 2; i++) {
-            	int view = Math.max(Math.max(buildings[i - 1], buildings[i - 2]), Math.max(buildings[i + 1], buildings[i + 2]));
-                if (buildings[i] > view) {
-                	bestView += (buildings[i] - view);
-                }
-            }
-            System.out.println("#" + t + " " + bestView);
+            System.out.println("#" + t + " " + bestView(buildings));
         }
         scanner.close();
+    }
+    public static int bestView(int[] buildings) {
+    	int view = 0;
+        for (int i = 2; i < buildings.length - 2; i++) {
+        	int nextBuilding = Math.max(Math.max(buildings[i - 1], buildings[i - 2]), Math.max(buildings[i + 1], buildings[i + 2]));
+            if (buildings[i] > nextBuilding) {
+            	view += (buildings[i] - nextBuilding);
+            }
+        }
+        return view;
     }
 }
