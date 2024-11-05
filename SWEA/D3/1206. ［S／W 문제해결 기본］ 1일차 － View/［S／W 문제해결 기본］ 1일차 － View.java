@@ -10,15 +10,18 @@ public class Solution {
             for (int i = 0; i < N; i++) {
             	buildings[i] = scanner.nextInt();
             }
-            int bestView = 0;
-            for (int i = 2; i < N - 2; i++) {
-            	int view = Math.max(Math.max(buildings[i - 1], buildings[i - 2]), Math.max(buildings[i + 1], buildings[i + 2]));
-                if (buildings[i] > view) {
-                	bestView += (buildings[i] - view);
-                }
-            }
-            System.out.println("#" + t + " " + bestView);
+            System.out.println("#" + t + " " + find(N, buildings));
         }
         scanner.close();
     }
+    public static int find(int N, int[] buildings) {
+    	int bestView = 0; 
+        for (int i = 2; i < N - 2; i++) {
+        	int view = Math.max(Math.max(buildings[i - 1], buildings[i - 2]), Math.max(buildings[i + 1], buildings[i + 2]));
+            if (buildings[i] > view) {
+            	bestView += (buildings[i] - view);
+            }
+        }
+        return bestView;
+    } 
 }
