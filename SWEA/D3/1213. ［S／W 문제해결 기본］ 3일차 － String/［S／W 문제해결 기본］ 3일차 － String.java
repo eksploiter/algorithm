@@ -6,22 +6,25 @@ public class Solution {
         for (int t = 1; t <= 10; t++) {
         	scanner.nextLine();
             String pattern = scanner.nextLine().trim();
-            String text = scanner.nextLine().trim();
-            int count = 0;
-            for (int i = 0; i <= text.length() - pattern.length(); i++) {
-            	boolean found = true;
-                for (int j = 0; j < pattern.length(); j++) {
-                	if (text.charAt(i + j) != pattern.charAt(j)) {
-                    	found = false;
-                        break;
-                    }
-                }
-                if (found) {
-                	count++;
-                }
-            }
-            System.out.println("#" + t + " " + count);
+            String test = scanner.nextLine().trim();
+            System.out.println("#" + t + " " + find(pattern, test));
         }
         scanner.close();
+    }
+    public static int find(String pattern, String text) {
+    	int count = 0;
+        for (int i = 0; i <= text.length() - pattern.length(); i++) {
+        	boolean found = true;
+            for (int j = 0; j < pattern.length(); j++) {
+            	if (text.charAt(i + j) != pattern.charAt(j)) {
+                	found = false;
+                    break;
+                }
+            }
+            if (found) {
+            	count++;
+            }
+        }
+        return count;
     }
 }
