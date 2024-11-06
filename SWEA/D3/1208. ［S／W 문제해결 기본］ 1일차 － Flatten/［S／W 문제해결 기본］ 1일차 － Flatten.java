@@ -15,29 +15,29 @@ public class Solution {
     }
     public static int find(int N, int[] arr) {
     	for (int i = 0; i < N; i++) {
-        	int high = 0;
-            int low = 0;
+        	int top = 0;
+            int bottom = 0;
             for (int j = 1; j < 100; j++) {
-            	if (arr[j] > arr[high]) {
-                	high = j;
+            	if (arr[j] > arr[top]) {
+                	top = j;
                 }
-                if (arr[j] < arr[low]) {
-                	low = j;
+                if (arr[j] < arr[bottom]) {
+                	bottom = j;
                 }
             }
-            arr[high] -= 1;
-            arr[low] += 1;
+            arr[top] -= 1;
+            arr[bottom] += 1;
         }
-        int high = 0;
-        int low = 0;
+        int top = 0;
+        int bottom = 0;
         for (int i = 0; i < 100; i++) {
-        	if (arr[i] > arr[high]) {
-            	high = i;
+        	if (arr[i] > arr[top]) {
+            	top = i;
             }
-            if (arr[i] < arr[low]) {
-            	low = i;
+            if (arr[i] < arr[bottom]) {
+            	bottom = i;
             }
         }
-        return arr[high] - arr[low];
+        return arr[top] - arr[bottom];
     }
 }
