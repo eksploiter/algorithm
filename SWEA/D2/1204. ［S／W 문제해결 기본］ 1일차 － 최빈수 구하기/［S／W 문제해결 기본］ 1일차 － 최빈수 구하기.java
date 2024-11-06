@@ -16,19 +16,19 @@ public class Solution {
     }
     public static int find(int[] scores) {
     	int[] count = new int[101];
-        for (int i = 0; i < scores.length; i++) {
+        for (int i = 0; i < 1000; i++) {
         	count[scores[i]]++;
         }
-        int maxCount = 0; 
-        int mode = 0;
-        for (int i = 0; i < count.length; i++) {
+        int maxCount = 0;
+        int score = 0;
+        for (int i = 0; i < 101; i++) {
         	if (count[i] > maxCount) {
             	maxCount = count[i];
-                mode = i;
-            } else if (count[i] == maxCount && i > mode) {
-            	mode = i;
+                score = i;
+            } else if (count[i] == maxCount && i > score) {
+            	score = i;
             }
         }
-        return mode;
+        return score;
     }
 }
