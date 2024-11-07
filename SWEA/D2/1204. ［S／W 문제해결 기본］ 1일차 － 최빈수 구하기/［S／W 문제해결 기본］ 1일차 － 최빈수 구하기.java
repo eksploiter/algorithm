@@ -21,7 +21,7 @@ public class Solution {
         }
         int maxCount = 0;
         int score = 0;
-        for (int i = 0; i < 101; i++) {
+        for (int i = 0; i < count.length; i++) {
         	if (count[i] > maxCount) {
             	maxCount = count[i];
                 score = i;
