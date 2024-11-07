@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Solution {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
     	Scanner scanner = new Scanner(System.in);
         for (int t = 1; t <= 10; t++) {
         	int N = scanner.nextInt();
@@ -14,13 +14,13 @@ public class Solution {
         scanner.close();
     }
     public static int find(int N, int[] arr) {
-    	int bestView = 0;
+    	int best = 0;
         for (int i = 2; i < N - 2; i++) {
         	int view = Math.max(Math.max(arr[i - 1], arr[i - 2]), Math.max(arr[i + 1], arr[i + 2]));
             if (arr[i] > view) {
-            	bestView += arr[i] - view;
+            	best += arr[i] - view;
             }
         }
-        return bestView;
+        return best;
     }
 }
