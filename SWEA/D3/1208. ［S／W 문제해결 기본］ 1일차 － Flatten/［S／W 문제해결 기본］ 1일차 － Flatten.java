@@ -15,9 +15,9 @@ public class Solution {
     }
     public static int find(int N, int[] arr) {
     	for (int i = 0; i < N; i++) {
-        	int top = 0;
+        	int top = 0; 
             int bottom = 0; 
-            for (int j = 1; j < 100; j++) {
+            for (int j = 1; j < arr.length; j++) {
             	if (arr[j] > arr[top]) {
                 	top = j;
                 }
@@ -28,9 +28,9 @@ public class Solution {
             arr[top] -= 1;
             arr[bottom] += 1;
         }
-        int top = 0;
+        int top = 0; 
         int bottom = 0;
-        for (int i = 1; i < 100; i++) {
+        for (int i = 0; i < arr.length; i++) {
         	if (arr[i] > arr[top]) {
             	top = i;
             }
