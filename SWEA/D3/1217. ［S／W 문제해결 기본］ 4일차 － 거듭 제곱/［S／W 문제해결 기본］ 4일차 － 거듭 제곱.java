@@ -1,18 +1,17 @@
 import java.util.Scanner;
-// 메서드 사용하지 않고 풀어보기
+
 public class Solution {
 	public static void main(String[] args) {
     	Scanner scanner = new Scanner(System.in);
-        int T = 10;
-        for (int i = 1; i <= T; i++) {
-            scanner.nextInt();
-        	int N = scanner.nextInt();
+        for (int t = 1; t <= 10; t++) {
+        	scanner.nextInt();
+            int N = scanner.nextInt();
             int M = scanner.nextInt();
             int answer = 1;
-            for (int j = 0; j < M; j++) {
+            for (int i = 0; i < M; i++) {
             	answer *= N;
             }
-            System.out.println("#" + i + " " + answer); 
+            System.out.println("#" + t + " " + answer);
         }
         scanner.close();
     }
