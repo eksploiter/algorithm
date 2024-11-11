@@ -6,8 +6,8 @@ public class Solution {
         for (int t = 1; t <= 10; t++) {
         	scanner.nextLine();
             String pattern = scanner.nextLine().trim();
-            String test = scanner.nextLine().trim();
-            System.out.println("#" + t + " " + find(pattern, test));
+            String text = scanner.nextLine().trim();
+            System.out.println("#" + t + " " + find(pattern, text));
         }
         scanner.close();
     }
@@ -19,7 +19,7 @@ public class Solution {
             	if (text.charAt(i + j) != pattern.charAt(j)) {
                 	found = false;
                     break;
-                }
+                } 
             }
             if (found) {
             	count++;
