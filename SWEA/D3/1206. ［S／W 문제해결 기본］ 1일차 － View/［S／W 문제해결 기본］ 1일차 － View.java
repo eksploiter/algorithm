@@ -10,7 +10,7 @@ public class Solution {
             	arr[i] = scanner.nextInt();
             }
             System.out.println("#" + t + " " + find(arr));
-        }
+        } 
         scanner.close();
     }
     public static int find(int[] arr) {
