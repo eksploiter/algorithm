@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Solution {
 	public static void main(String[] args) {
     	Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
         for (int t = 1; t <= 10; t++) {
         	scanner.nextInt();
             int[] scores = new int[1000];
@@ -22,8 +23,8 @@ public class Solution {
         int score = 0;
         for (int i = 0; i < count.length; i++) {
         	if (count[i] > maxCount) {
-            	maxCount = count[i];
-                score = i;
+                maxCount = count[i]; 
+            	score = i;
             } else if (count[i] == maxCount && i > score) {
             	score = i;
             }
