@@ -12,7 +12,7 @@ public class Solution {
                 }
             }
             System.out.println("#" + t + " " + find(arr));
-        } 
+        }
         scanner.close();
     }
     public static int find(int[][] arr) {
@@ -26,7 +26,7 @@ public class Solution {
             }
             maxSum = Math.max(maxSum, Math.max(rowSum, colSum));
         }
-        int diag1 = 0; 
+        int diag1 = 0;
         int diag2 = 0;
         for (int i = 0; i < 100; i++) {
         	diag1 += arr[i][i];
