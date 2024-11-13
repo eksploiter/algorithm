@@ -8,7 +8,7 @@ public class Solution {
             int N = scanner.nextInt();
             int M = scanner.nextInt();
             int answer = 1;
-            for (int i = 0; i < M; i++) {
+            for (int i = 1; i <= M; i++) {
             	answer *= N;
             }
             System.out.println("#" + t + " " + answer);
