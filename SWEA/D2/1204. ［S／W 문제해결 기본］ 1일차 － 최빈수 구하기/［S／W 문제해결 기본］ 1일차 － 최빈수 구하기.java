@@ -10,13 +10,13 @@ public class Solution {
             for (int i = 0; i < 1000; i++) {
             	arr[i] = scanner.nextInt();
             }
-            System.out.println("#" + t + " " + find(arr));
+            System.out.println("#" + t + " " + find(arr)); 
         }
         scanner.close();
     }
     public static int find(int[] arr) {
     	int[] count = new int[101];
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < arr.length; i++) {
         	count[arr[i]]++;
         }
         int maxCount = 0;
