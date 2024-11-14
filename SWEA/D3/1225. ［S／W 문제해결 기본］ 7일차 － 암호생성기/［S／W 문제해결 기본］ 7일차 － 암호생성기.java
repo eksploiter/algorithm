@@ -7,7 +7,7 @@ public class Solution {
         	scanner.nextInt();
             int[] arr = new int[8];
             for (int i = 0; i < 8; i++) {
-            	arr[i]  = scanner.nextInt();
+            	arr[i] = scanner.nextInt();
             }
             boolean isComplete = false;
             while (!isComplete) {
