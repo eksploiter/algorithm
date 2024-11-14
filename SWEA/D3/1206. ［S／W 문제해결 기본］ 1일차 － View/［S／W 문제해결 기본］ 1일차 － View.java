@@ -9,15 +9,18 @@ public class Solution {
             for (int i = 0; i < N; i++) {
             	arr[i] = scanner.nextInt();
             }
-            int bestView = 0;
-            for (int i = 2; i < N - 2; i++) {
-            	int view = Math.max(Math.max(arr[i - 1], arr[i - 2]), Math.max(arr[i + 1], arr[i + 2]));
-                if (arr[i] > view) {
-                	bestView += arr[i] - view;
-                }
-            }
-            System.out.println("#" + t + " " + bestView);
+            System.out.println("#" + t + " " + find(arr)); 
         }
         scanner.close();
+    }
+    public static int find(int[] arr) {
+    	int count = 0;
+        for (int i = 2; i < arr.length - 2; i++) {
+        	int view = Math.max(Math.max(arr[i - 1], arr[i - 2]), Math.max(arr[i + 1], arr[i + 2]));
+            if (arr[i] > view) {
+            	count += arr[i] - view;
+            }
+        }
+        return count;
     }
 }
