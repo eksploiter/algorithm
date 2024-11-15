@@ -9,7 +9,7 @@ public class Solution {
             for (int i = 0; i < N; i++) {
             	arr[i] = scanner.nextInt();
             }
-            System.out.println("#" + t + " " + find(arr)); 
+            System.out.println("#" + t + " " + find(arr));
         }
         scanner.close();
     }
@@ -18,7 +18,7 @@ public class Solution {
         for (int i = 2; i < arr.length - 2; i++) {
         	int view = Math.max(Math.max(arr[i - 1], arr[i - 2]), Math.max(arr[i + 1], arr[i + 2]));
             if (arr[i] > view) {
-            	count += arr[i] - view;
+            	count += (arr[i] - view);
             }
         }
         return count;
