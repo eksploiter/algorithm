@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Solution {
-	public static void main(String[] ags) {
+    public static void main(String[] args) {
     	Scanner scanner = new Scanner(System.in);
         for (int t = 1; t <= 10; t++) {
         	scanner.nextInt();
