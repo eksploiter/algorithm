@@ -14,13 +14,13 @@ public class Solution {
         scanner.close();
     }
     public static int find(int[] arr) {
-    	int count = 0;
+    	int bestView = 0;
         for (int i = 2; i < arr.length - 2; i++) {
         	int view = Math.max(Math.max(arr[i - 1], arr[i - 2]), Math.max(arr[i + 1], arr[i + 2]));
             if (arr[i] > view) {
-            	count += (arr[i] - view);
+            	bestView += arr[i] - view;
             }
         }
-        return count;
+        return bestView;
     }
 }
