@@ -9,13 +9,13 @@ public class Solution {
             for (int i = 0; i < 100; i++) {
             	arr[i] = scanner.nextInt();
             }
-            System.out.println("#" + t + " " + find(N, arr)); 
+            System.out.println("#" + t + " " + find(N, arr));
         }
         scanner.close();
     }
     public static int find(int N, int[] arr) {
     	for (int i = 0; i < N; i++) {
-        	int top = 0;
+        	int top = 0; 
             int bottom = 0;
             for (int j = 0; j < arr.length; j++) {
             	if (arr[j] > arr[top]) {
