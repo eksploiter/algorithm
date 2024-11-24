@@ -9,7 +9,7 @@ public class Solution {
             for (int i = 0; i < N; i++) {
             	arr[i] = scanner.nextInt();
             }
-            System.out.println("#" + t + " " + find(arr));
+            System.out.println("#" + t + " " + find(arr)); 
         }
         scanner.close();
     }
