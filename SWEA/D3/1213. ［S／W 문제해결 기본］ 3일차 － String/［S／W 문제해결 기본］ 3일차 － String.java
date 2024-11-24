@@ -7,7 +7,7 @@ public class Solution {
         	scanner.nextLine();
             String pattern = scanner.nextLine();
             String text = scanner.nextLine();
-            System.out.println("#" + t + " "+ find(pattern, text));
+            System.out.println("#" + t + " " + find(pattern, text));
         }
         scanner.close();
     }
