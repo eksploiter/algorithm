@@ -12,7 +12,7 @@ public class Solution {
             boolean isComplete = false;
             while (!isComplete) {
             	for (int i = 1; i <= 5; i++) {
-                	arr[0] = arr[0] - i;
+                	arr[0]  = arr[0] - i;
                     if (arr[0] <= 0) {
                     	arr[0] = 0;
                         isComplete = true;
