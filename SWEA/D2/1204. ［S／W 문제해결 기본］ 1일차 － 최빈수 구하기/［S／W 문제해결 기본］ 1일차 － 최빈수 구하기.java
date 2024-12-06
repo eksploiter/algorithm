@@ -19,7 +19,7 @@ public class Solution {
         for (int i = 0; i < arr.length; i++) {
         	count[arr[i]]++;
         }
-        int maxCount = 0; 
+        int maxCount = 0;
         int score = 0;
         for (int i = 0; i < count.length; i++) {
         	if (count[i] > maxCount) {
