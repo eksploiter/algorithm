@@ -5,9 +5,9 @@ public class Solution {
     	Scanner scanner = new Scanner(System.in);
         for (int t = 1; t <= 10; t++) {
         	scanner.nextLine();
-            String pattern = scanner.nextLine();
-            String text = scanner.nextLine();
-            System.out.println("#" + t + " " + find(pattern, text));
+            String pattern = scanner.nextLine().trim();
+            String text = scanner.nextLine().trim();
+            System.out.println("#" + t + " " + find(pattern, text)); 
         }
         scanner.close();
     }
