@@ -10,25 +10,22 @@ public class Solution {
             for (int i = 0; i < 1000; i++) {
             	arr[i] = scanner.nextInt();
             }
-            System.out.println("#" + t + " " + find(arr));
+            int[] count = new int[101];
+            for (int i = 0; i < arr.length; i++) {
+            	count[arr[i]]++;
+            }
+            int maxCount = 0;
+            int score = 0;
+            for (int i = 0; i < count.length; i++) {
+            	if (count[i] > maxCount) {
+                	maxCount = count[i];
+                    score = i;
+                } else if (count[i] == maxCount && i > score) {
+                	score = i;
+                }
+            }
+            System.out.println("#" + t + " " + score);
         }
         scanner.close();
-    }
-    public static int find(int[] arr) {
-    	int[] count = new int[101];
-        for (int i = 0; i < arr.length; i++) {
-        	count[arr[i]]++;
-        }
-        int maxCount = 0;
-        int score = 0;
-        for (int i = 0; i < count.length; i++) {
-        	if (count[i] > maxCount) {
-            	maxCount = count[i];
-                score = i;
-            } else if (count[i] == maxCount && i > score) {
-            	score = i;
-            }
-        }
-        return score;
     }
 }
