@@ -12,14 +12,17 @@ public class Main {
             totalSum += arr[i];
         }
 
-        outer:
+        boolean found = false; // 두 난쟁이를 찾았는지 여부를 확인하는 변수
+
         for (int i = 0; i < 9; i++) {
             for (int j = i + 1; j < 9; j++) {
                 if (totalSum - arr[i] - arr[j] == 100) {
                     arr[i] = arr[j] = -1; // 제외할 난쟁이의 키를 -1로 설정
-                    break outer; // 두 난쟁이를 찾았으니 루프 종료
+                    found = true; // 두 난쟁이를 찾았음을 표시
+                    break; // 내부 루프 종료
                 }
             }
+            if (found) break; // 외부 루프 종료
         }
 
         // 결과 출력
