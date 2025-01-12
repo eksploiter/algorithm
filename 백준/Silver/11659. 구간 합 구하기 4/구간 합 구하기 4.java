@@ -1,30 +1,31 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // N: 수의 개수, M: 합을 구해야 하는 횟수
-        int N = scanner.nextInt();
-        int M = scanner.nextInt();
-
-        int[] numbers = new int[N + 1];  // 주어진 수 배열 (1-based index)
-        int[] prefix = new int[N + 1];   // 누적 합 배열 (1-based index)
-
-        // 수 입력과 동시에 누적 합 계산
-        for (int i = 1; i <= N; i++) {
-            numbers[i] = scanner.nextInt();
-            prefix[i] = prefix[i - 1] + numbers[i];
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = 
+            new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer stringTokenizer = 
+            new StringTokenizer(bufferedReader.readLine());
+        // bufferedReader.readLine() -> 예제의 첫 번째 줄을 읽어왔다.
+        
+        int suNo = Integer.parseInt(stringTokenizer.nextToken());
+        int quizNo = Integer.parseInt(stringTokenizer.nextToken());
+        
+        long[] S = new long[suNo + 1]; // 문제와 달리 배열은 0번째 부터 시작하므로
+        
+        stringTokenizer = new StringTokenizer(bufferedReader.readLine());
+        for (int i = 1; i <= suNo; i++) {
+            S[i] = S[i - 1] + Integer.parseInt(stringTokenizer.nextToken());
         }
-
-        // M개의 구간 합 계산 및 출력
-        for (int m = 0; m < M; m++) {
-            int i = scanner.nextInt();
-            int j = scanner.nextInt();
-
-            // 구간 합 출력
-            System.out.println(prefix[j] - prefix[i - 1]);
+        
+        for (int q = 0; q < quizNo; q++) {
+            stringTokenizer = new StringTokenizer(bufferedReader.readLine());
+            int i = Integer.parseInt(stringTokenizer.nextToken());
+            int j = Integer.parseInt(stringTokenizer.nextToken());
+            System.out.println(S[j] - S[i - 1]);
         }
     }
 }
-
