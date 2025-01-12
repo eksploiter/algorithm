@@ -11,19 +11,18 @@ public class Main {
             scores[i] = scanner.nextInt();
         }
 
-        int max = scores[0];
+        int M = scores[0];
         for (int i = 1; i < N; i++) {
-            if (scores[i] > max) {
-                max = scores[i];
+            if (scores[i] > M) {
+                M = scores[i];
             }
         }
 
         double total = 0;
         for (int i = 0; i < N; i++) {
-            total += ((double) scores[i] / max) * 100;
+            total += ((double) scores[i] / M) * 100;
         }
-
-        double average = total / N;
+        double average =  total / N;
         System.out.println(average);
     }
 }
