@@ -5,26 +5,22 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = 
+        BufferedReader br = 
             new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer stringTokenizer = 
-            new StringTokenizer(bufferedReader.readLine());
-        // bufferedReader.readLine() -> 예제의 첫 번째 줄을 읽어왔다.
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int s = Integer.parseInt(st.nextToken());
+        int q = Integer.parseInt(st.nextToken());
         
-        int suNo = Integer.parseInt(stringTokenizer.nextToken());
-        int quizNo = Integer.parseInt(stringTokenizer.nextToken());
+        long[] S = new long[s + 1];
         
-        long[] S = new long[suNo + 1]; // 문제와 달리 배열은 0번째 부터 시작하므로
-        
-        stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        for (int i = 1; i <= suNo; i++) {
-            S[i] = S[i - 1] + Integer.parseInt(stringTokenizer.nextToken());
+        st = new StringTokenizer(br.readLine());
+        for (int i = 1; i <= s; i++) {
+            S[i] = S[i - 1] + Integer.parseInt(st.nextToken());
         }
-        
-        for (int q = 0; q < quizNo; q++) {
-            stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-            int i = Integer.parseInt(stringTokenizer.nextToken());
-            int j = Integer.parseInt(stringTokenizer.nextToken());
+        for (int m = 0; m < q; m++) {
+            st = new StringTokenizer(br.readLine());
+            int i = Integer.parseInt(st.nextToken());
+            int j = Integer.parseInt(st.nextToken());
             System.out.println(S[j] - S[i - 1]);
         }
     }
