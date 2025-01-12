@@ -8,15 +8,18 @@ public class Main {
         for (int i = 0; i < N; i++) {
             scores[i] = scanner.nextInt();
         }
-        double highScore = 0;
         double sum = 0;
+        double maxScore = 0;
         for (int i = 0; i < N; i++) {
-            if (scores[i] > highScore) {
-                highScore = scores[i];
+            if (scores[i] > maxScore) {
+                maxScore = scores[i];
             }
-            sum += scores[i];
         }
-        System.out.println(sum * 100 / highScore / N);
+        for (int i = 0; i < N; i++) {
+            sum += (double) scores[i] / maxScore * 100;
+        }
+        double average = sum / N;
+        System.out.println(average);
         scanner.close();
     }
 }
