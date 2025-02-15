@@ -25,24 +25,24 @@ public class Main {
             }
         }
 
-        int maxSize  = 0;
-        int pictureNum = 0;
+        int maxSize = 0;
+        int paintNum = 0;
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (board[i][j] == 0 || visited[i][j]) continue;
-
-                pictureNum++;
+                if (board[i][j] != 1 || visited[i][j]) continue;
+                
+                paintNum++;
                 maxSize = Math.max(maxSize, bfs(i, j));
             }
         }
 
-        System.out.println(pictureNum);
+        System.out.println(paintNum);
         System.out.println(maxSize);
     }
 
     public static int bfs(int startX, int startY) {
-        Queue<int[]> queue = new LinkedList<>();
+        Queue<int []> queue = new LinkedList<>();
         queue.add(new int[]{startX, startY});
         visited[startX][startY] = true;
 
@@ -55,7 +55,7 @@ public class Main {
 
             area++;
 
-            for (int dir = 0; dir < 4; dir ++) {
+            for (int dir = 0; dir < 4; dir++) {
                 int nx = x + dx[dir];
                 int ny = y + dy[dir];
 
