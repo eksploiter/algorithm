@@ -1,28 +1,36 @@
+import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = sc.nextInt();
-        
-        int[] sizes = new int[6];
+        int N = Integer.parseInt(st.nextToken());
+        int[] size = new int[6];
+
+        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < 6; i++) {
-            sizes[i] = sc.nextInt();
+            size[i] = Integer.parseInt(st.nextToken());
         }
-        
-        int T = sc.nextInt();
-        int P = sc.nextInt();
-        
-        int tshirtBundles = 0;
-        for (int size : sizes) {
-            tshirtBundles += (size + T - 1) / T; // 올림 계산
+
+        st = new StringTokenizer(br.readLine());
+        int T = Integer.parseInt(st.nextToken());
+        int P = Integer.parseInt(st.nextToken());
+
+        int tSum = 0;
+
+        for (int i = 0; i < 6; i++) {
+            tSum += size[i] / T;
+            if (size[i] % T != 0) {
+                tSum += 1;
+            }
         }
-        
-        int penBundles = N / P;
-        int individualPens = N % P;
-        
-        System.out.println(tshirtBundles);
-        System.out.println(penBundles + " " + individualPens);
+
+        int penM = N / P;
+        int penJ = N % P;
+
+        System.out.println(tSum);
+        System.out.println(penM + " " + penJ);
     }
 }
