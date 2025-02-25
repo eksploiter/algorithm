@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+
     static class Person {
         int age;
         String name;
@@ -14,6 +15,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         int N = Integer.parseInt(br.readLine());
         Person[] persons = new Person[N];
 
@@ -24,17 +26,12 @@ public class Main {
             persons[i] = new Person(age, name);
         }
 
-        Arrays.sort(persons, new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                return o1.age - o2.age;
-            }
-        });
+        Arrays.sort(persons, (o1, o2) -> o1.age - o2.age);
 
         StringBuilder sb = new StringBuilder();
         for (Person p : persons) {
             sb.append(p.age).append(" ").append(p.name).append("\n");
         }
-        System.out.print(sb);
+        System.out.println(sb);
     }
 }
