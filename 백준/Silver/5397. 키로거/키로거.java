@@ -2,22 +2,22 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
+
+        int T = Integer.parseInt(br.readLine());
 
         Stack<Character> left = new Stack<>();
         Stack<Character> right = new Stack<>();
 
-        StringBuilder sb = new StringBuilder();
-
-        int num = Integer.parseInt(st.nextToken());
-
-        for (int i = 0; i < num; i++) {
+        for (int t = 0; t < T; t++) {
             String input = br.readLine();
-            for (char ch : input.toCharArray()) {
-                switch(ch) {
+
+            for (int j = 0; j < input.length(); j++) {
+                char ch = input.charAt(j);
+
+                switch (ch) {
                     case '<':
                         if (!left.isEmpty()) {
                             right.push(left.pop());
@@ -42,11 +42,13 @@ public class Main {
             while (!left.isEmpty()) {
                 right.push(left.pop());
             }
+
             while (!right.isEmpty()) {
                 sb.append(right.pop());
             }
             sb.append("\n");
         }
-        System.out.println(sb.toString());
+
+        System.out.println(sb);
     }
 }
