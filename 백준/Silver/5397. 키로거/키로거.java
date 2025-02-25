@@ -8,47 +8,40 @@ public class Main {
 
         int T = Integer.parseInt(br.readLine());
 
-        Stack<Character> left = new Stack<>();
-        Stack<Character> right = new Stack<>();
-
         for (int t = 0; t < T; t++) {
             String input = br.readLine();
 
-            for (int j = 0; j < input.length(); j++) {
-                char ch = input.charAt(j);
+            Deque<Character> left = new LinkedList<>();
+            Deque<Character> right = new LinkedList<>();
 
-                switch (ch) {
+            for (char ch : input.toCharArray()) {
+                switch(ch) {
                     case '<':
                         if (!left.isEmpty()) {
-                            right.push(left.pop());
+                            right.addFirst(left.pollLast());
                         }
                         break;
                     case '>':
                         if (!right.isEmpty()) {
-                            left.push(right.pop());
+                            left.addLast(right.pollFirst());
                         }
                         break;
                     case '-':
                         if (!left.isEmpty()) {
-                            left.pop();
+                            left.pollLast();
                         }
                         break;
                     default:
-                        left.push(ch);
+                        left.addLast(ch);
                         break;
                 }
             }
 
-            while (!left.isEmpty()) {
-                right.push(left.pop());
-            }
-
-            while (!right.isEmpty()) {
-                sb.append(right.pop());
-            }
+            for (char ch : left) sb.append(ch);
+            for (char ch : right) sb.append(ch);
             sb.append("\n");
         }
 
-        System.out.println(sb);
+        System.out.print(sb);
     }
 }
